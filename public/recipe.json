@@ -1,0 +1,91 @@
+[
+    {
+      "recipe_image": "https://i.ibb.co.com/f1zBz6g/Grilled-Lemon-Basil-Chicken-l-Simply-Scratch-com-grilling-lemon-basil-chicken-dinner-easy-recipe-7-1.jpg",
+      "recipe_id": 1,
+      "recipe_name": "Grilled Chicken with Basil",
+      "short_description": "A delicious grilled chicken dish served with fresh basil.",
+      "ingredients": [
+        "550 g chicken",
+        "120 ml soy sauce",
+        "200 g basil leaf",
+        "400 g mushroom"
+      ],
+      "preparing_time": "30 min",
+      "calories": "320 calories"
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/z6xfNBN/spaghetti-carbonara-01-1024x1536.jpg",
+      "recipe_id": 2,
+      "recipe_name": "Pasta Carbonara",
+      "short_description": "A classic Italian pasta dish with creamy sauce and pancetta.",
+      "ingredients": [
+        "400 g spaghetti",
+        "200 g pancetta",
+        "2 eggs",
+        "100 g Parmesan cheese",
+        "100 ml cream"
+      ],
+      "preparing_time": "25 min",
+      "calories": "450 calories"
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/FxQ33zv/vegetable-stir-fry.jpg",
+      "recipe_id": 3,
+      "recipe_name": "Vegetable Stir Fry",
+      "short_description": "A healthy and colorful stir fry with a variety of vegetables.",
+      "ingredients": [
+        "300 g broccoli",
+        "200 g bell pepper",
+        "100 g carrot",
+        "2 cloves garlic",
+        "50 ml soy sauce"
+      ],
+      "preparing_time": "20 min",
+      "calories": "180 calories"
+    },
+    {
+      "recipe_image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+      "recipe_id": 4,
+      "recipe_name": "Beef Tacos",
+      "short_description": "Spicy beef tacos with fresh salsa and guacamole.",
+      "ingredients": [
+        "400 g ground beef",
+        "8 taco shells",
+        "100 g salsa",
+        "100 g shredded cheese",
+        "50 g guacamole"
+      ],
+      "preparing_time": "35 min",
+      "calories": "370 calories"
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/61TSCFT/mango-smoothie.jpg",
+      "recipe_id": 5,
+      "recipe_name": "Mango Smoothie",
+      "short_description": "A refreshing smoothie made with ripe mangoes and yogurt.",
+      "ingredients": [
+        "2 ripe mangoes",
+        "200 ml yogurt",
+        "50 ml milk",
+        "1 tablespoon honey"
+      ],
+      "preparing_time": "10 min",
+      "calories": "200 calories"
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/zbMvqWm/lentil-soup-3sq.jpg",
+      "recipe_id": 6,
+      "recipe_name": "Lentil Soup",
+      "short_description": "A hearty and nutritious soup made with lentils and vegetables.",
+      "ingredients": [
+        "200 g lentils",
+        "1 onion",
+        "2 carrots",
+        "2 celery stalks",
+        "1 liter vegetable broth"
+      ],
+      "preparing_time": "40 min",
+      "calories": "250 calories"
+    }
+]
+  
