@@ -1,3 +1,5 @@
+import { FaClock, FaVaadin } from "react-icons/fa";
+
 
 const Cart = ({cart}) => {
     const {recipe_image, recipe_name, short_description, ingredients,preparing_time,calories}=cart;
@@ -19,7 +21,19 @@ const Cart = ({cart}) => {
             <li>{ingredients[3]}</li>
 
          </ul>
-        </div>
+
+         {/* time and categories */}
+         <div className="flex justify-around">
+            <div className="flex justify-start items-center gap-1 p-6 lg:-ml-20">
+                <FaClock></FaClock>
+                <p className="text-[#282828CC] font-medium text-base">{preparing_time}</p>
+            </div>
+            <div className="flex justify-start items-center gap-1">
+              <FaVaadin></FaVaadin>
+              <p className="text-[#282828CC] font-medium text-base">{calories}</p>
+            </div>
+         </div>
+         <button></button><button className="btn btn-accent text-xl font-medium bg-[#0BE58A] rounded-3xl py-5 px-6 mr-3">Want to cook</button></div>
       </div>
     );
 };
