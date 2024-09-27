@@ -6,7 +6,7 @@ const Header = () => {
         <h1 className="text-4xl font-bold text-[#150B2B]">Recipe Calories</h1>
       </div>
       <div>
-        <ul className="flex gap-4 text-xl font-normal text-[#150B2BB3] justify-center">
+        <ul className="flex gap-5 text-xl font-normal text-[#150B2BB3] justify-center">
           <li>Home</li>
           <li>Recipes</li>
           <li>About</li>
