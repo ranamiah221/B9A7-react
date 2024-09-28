@@ -4,11 +4,12 @@ import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
 import Recipes from "./components/Recipes/Recipes";
 import Cart from "./components/Cart/Cart";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const [carts, setCarts] = useState([]);
   const [saveCart, setSaveCart] = useState([]);
-  
+
   useEffect(() => {
     fetch("recipe.json")
       .then((res) => res.json())
@@ -16,8 +17,12 @@ function App() {
   }, []);
 
   const handleAddToCart = (cart) => {
-    setSaveCart([...saveCart, cart]);
-    console.log(cart);
+    const isExist = saveCart.find((item) => item.recipe_id === cart.recipe_id);
+    if (isExist) {
+      toast.error("Already Add to the Cart");
+    } else {
+      setSaveCart([...saveCart, cart]);
+    }
   };
 
   return (
@@ -25,6 +30,9 @@ function App() {
       <Header></Header>
       <Banner></Banner>
       <Recipes></Recipes>
+      <div>
+        <Toaster position="top-center" reverseOrder={false} />
+      </div>
       {/* carts container */}
       <div className="flex justify-between">
         {/* recipe carts */}
@@ -45,27 +53,29 @@ function App() {
             </h2>
           </div>
 
-          <div className="m-6 text-[#878787] w-2/4 mx-auto">
+          <div className="m-6 text-[#878787] w-4/5 mx-auto">
             <table className="table">
               <thead className="">
                 <tr className="">
                   <th></th>
-                  <th>Name</th>
-                  <th>Time</th>
-                  <th>Calories</th>
+                  <th className="w-32 text-xl font-medium">Name</th>
+                  <th className="w-32 text-xl font-medium">Time</th>
+                  <th className="w-32 text-xl font-medium">Calories</th>
                   <th></th>
                 </tr>
               </thead>
-              {
-              saveCart.map((save,idx) => (
-                
+              {saveCart.map((save, idx) => (
                 <tbody key={idx}>
-                  <tr>
+                  <tr className="text-xl font-normal">
                     <td>{idx + 1}</td>
                     <td>{save?.recipe_name}</td>
                     <td>{save?.preparing_time}</td>
                     <td>{save.calories}</td>
-                    <td><button className="bg-green-600 text-base font-medium text-[#FFF] p-2 rounded-2xl">preparing</button></td>
+                    <td>
+                      <button className="bg-green-500 text-base font-medium text-[#150B2B] px-4 py-2 rounded-2xl">
+                        Preparing
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               ))}
