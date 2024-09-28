@@ -9,8 +9,8 @@ import toast, { Toaster } from "react-hot-toast";
 function App() {
   const [carts, setCarts] = useState([]);
   const [saveCart, setSaveCart] = useState([]);
-
-  useEffect(() => {
+  const [prepares, setPrepares]=useState([]);
+   useEffect(() => {
     fetch("recipe.json")
       .then((res) => res.json())
       .then((data) => setCarts(data));
@@ -24,6 +24,10 @@ function App() {
       setSaveCart([...saveCart, cart]);
     }
   };
+
+  const handleCurrentAddToCart=(prepare)=>{
+    setPrepares([...prepares,prepare])
+  }
 
   return (
     <>
@@ -52,7 +56,6 @@ function App() {
               Want to cook:{saveCart.length}
             </h2>
           </div>
-
           <div className="m-6 text-[#878787] w-4/5 mx-auto">
             <table className="table">
               <thead className="">
@@ -72,7 +75,7 @@ function App() {
                     <td>{save?.preparing_time}</td>
                     <td>{save.calories}</td>
                     <td>
-                      <button className="bg-green-500 text-base font-medium text-[#150B2B] px-4 py-2 rounded-2xl">
+                      <button onClick={()=>handleCurrentAddToCart(save)} className="bg-green-500 text-base font-medium text-[#150B2B] px-4 py-2 rounded-2xl">
                         Preparing
                       </button>
                     </td>
@@ -81,7 +84,45 @@ function App() {
               ))}
             </table>
           </div>
+
+
+          {/* Currently cooking section */}
+          <div className="w-3/5 mx-auto mt-20">
+            <h2 className="text-xl font-semibold border-b-2 pb-4">
+              Currently Want to cook : {prepares.length}
+            </h2>
+          </div>
+
+          {/* currently table element */}
+          <div className="m-6 text-[#878787] w-4/5 mx-auto">
+            <table className="table">
+              <thead className="">
+                <tr className="">
+                  <th></th>
+                  <th className="w-32 text-xl font-medium">Name</th>
+                  <th className="w-32 text-xl font-medium">Time</th>
+                  <th className="w-32 text-xl font-medium">Calories</th>
+                 
+                </tr>
+              </thead>
+              {prepares.map((prepare, idx) => (
+                <tbody key={idx}>
+                  <tr className="text-xl font-normal">
+                    <td>{idx + 1}</td>
+                    <td>{prepare?.recipe_name}</td>
+                    <td>{prepare?.preparing_time}</td>
+                    <td>{prepare?.calories}</td>
+                
+                  </tr>
+                </tbody>
+              ))}
+            </table>
+          </div>
+          
+
         </div>
+        
+
       </div>
     </>
   );
