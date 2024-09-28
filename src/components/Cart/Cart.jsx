@@ -6,7 +6,7 @@ const Cart = ({cart, handleAddToCart}) => {
     const {recipe_image, recipe_name, short_description, ingredients,preparing_time,calories}=cart;
 
     return ( 
-        <div className="card bg-base-100 w-full shadow-xl p-7 rounded-lg border-[#28282833] border-2 flex flex-col">
+        <div className="card bg-base-100 md:w-full shadow-xl p-7 rounded-lg border-[#28282833] border-2 flex flex-col">
         <figure>
           <img className="h-80 w-full rounded-lg"
             src={recipe_image}
@@ -34,7 +34,7 @@ const Cart = ({cart, handleAddToCart}) => {
          </div>
         </div>
         {/* button */}
-        <button onClick={()=>handleAddToCart(cart)} className="btn btn-accent text-xl font-medium bg-[#0BE58A] rounded-3xl py-5 px-6 mr-3">Want to cook</button>
+        <button onClick={()=>handleAddToCart(cart)} className="btn btn-accent text-xl font-medium bg-[#0BE58A] rounded-3xl md:py-5 md:px-6 mr-3 p-1">Want to cook</button>
       </div>
     );
 };

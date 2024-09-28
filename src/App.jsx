@@ -54,9 +54,9 @@ function App() {
         <Toaster position="top-center" reverseOrder={false} />
       </div>
       {/* carts container */}
-      <div className="flex justify-between">
+      <div className="md:flex justify-between">
         {/* recipe carts */}
-        <div className="w-3/5 grid grid-cols-2 gap-5 mr-5">
+        <div className="md:w-3/5 grid md:grid-cols-2 gap-5 md:mr-5">
           {carts.map((cart) => (
             <Cart
               key={cart.id}
@@ -66,32 +66,32 @@ function App() {
           ))}
         </div>
         {/* history section */}
-        <div className="bg-[#FFF] w-2/5 text-center border-[#28282833] border-2 p-8 rounded-lg">
-          <div className="w-3/5 mx-auto">
+        <div className="bg-[#FFF] md:w-2/5 text-center border-[#28282833] border-2 md:p-8 rounded-lg mt-3">
+          <div className="md:w-3/5 mx-auto">
             <h2 className="text-xl font-semibold border-b-2 pb-4">
               Want to cook:{saveCart.length}
             </h2>
           </div>
-          <div className="m-6 text-[#878787] w-4/5 mx-auto">
+          <div className="md:m-6 text-[#878787] md:w-4/5 mx-auto">
             <table className="table">
               <thead className="">
                 <tr className="">
                   <th></th>
-                  <th className="w-32 text-xl font-medium">Name</th>
-                  <th className="w-32 text-xl font-medium">Time</th>
-                  <th className="w-32 text-xl font-medium">Calories</th>
+                  <th className="md:w-32 text-xl font-medium">Name</th>
+                  <th className="md:w-32 text-xl font-medium">Time</th>
+                  <th className="md:w-32 text-xl font-medium">Calories</th>
                   <th></th>
                 </tr>
               </thead>
               {saveCart.map((save, idx) => (
-                <tbody key={idx}>
+                <tbody className="m-1" key={idx}>
                   <tr className="text-xl font-normal">
-                    <td>{idx + 1}</td>
+                     <td>{idx + 1}</td>
                     <td>{save?.recipe_name}</td>
                     <td>{save?.preparing_time}</td>
                     <td>{save.calories}</td>
                     <td>
-                      <button onClick={()=>handleCurrentAddToCart(save.recipe_id, save)} className="bg-green-500 text-base font-medium text-[#150B2B] px-4 py-2 rounded-2xl">
+                      <button onClick={()=>handleCurrentAddToCart(save.recipe_id, save)} className="bg-green-500 text-base font-medium text-[#150B2B] md:px-4 md:py-2 p-1 rounded-2xl">
                         Preparing
                       </button>
                     </td>
@@ -103,21 +103,21 @@ function App() {
 
 
           {/* Currently cooking section */}
-          <div className="w-3/5 mx-auto mt-20">
+          <div className="md:w-3/5 mx-auto md:mt-20 mt-10">
             <h2 className="text-xl font-semibold border-b-2 pb-4">
               Currently Want to cook : {prepares.length}
             </h2>
           </div>
 
           {/* currently table element */}
-          <div className="m-6 text-[#878787] w-4/5 mx-auto">
+          <div className="md:m-6 text-[#878787] md:w-4/5 mx-auto">
             <table className="table">
               <thead className="">
                 <tr className="">
                   <th></th>
-                  <th className="w-32 text-xl font-medium">Name</th>
-                  <th className="w-32 text-xl font-medium">Time</th>
-                  <th className="w-32 text-xl font-medium">Calories</th>
+                  <th className="md:w-32 text-xl font-medium">Name</th>
+                  <th className="md:w-32 text-xl font-medium">Time</th>
+                  <th className="md:w-32 text-xl font-medium">Calories</th>
                  
                 </tr>
               </thead>
@@ -136,8 +136,8 @@ function App() {
                   <tr className="text-xl font-normal">
                     <td></td>
                     <td></td>
-                    <td className="text-xl text-black font-medium pt-10">Total Time= {totalTime} <span className="text-base font-medium">min</span> </td>
-                    <td className="text-xl text-black font-medium pt-10">Total Calories= {totalCalories} <span className="text-base font-medium">calories</span></td>
+                    <td className="md:text-xl text-sm text-black md:font-medium md:pt-10 pt-3 mb-10">Total Time= {totalTime} <span className="text-base font-medium">min</span> </td>
+                    <td className="md:text-xl text-sm text-black md:font-medium md:pt-10 pt-3 mb-10">Total Calories= {totalCalories} <span className="text-base font-medium">calories</span></td>
                 
                   </tr>
                 </tbody>

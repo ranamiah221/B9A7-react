@@ -1,7 +1,7 @@
 import { FaUser } from "react-icons/fa";
 const Header = () => {
   return (
-    <div className="grid grid-cols-3 items-center gap-5 justify-around mt-8">
+    <div className="grid md:grid-cols-3 items-center gap-5 justify-around mt-8">
       <div>
         <h1 className="text-4xl font-bold text-[#150B2B]">Recipe Calories</h1>
       </div>
