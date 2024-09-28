@@ -24,9 +24,12 @@ function App() {
       setSaveCart([...saveCart, cart]);
     }
   };
+  const handleCurrentAddToCart=(id,prepare)=>{
+    const newPrepare=([...prepares,prepare])
+    setPrepares(newPrepare);
+    const remainingSaveCart=saveCart.filter(item=> item.recipe_id !== id)
+    setSaveCart(remainingSaveCart);
 
-  const handleCurrentAddToCart=(prepare)=>{
-    setPrepares([...prepares,prepare])
   }
 
   return (
@@ -75,7 +78,7 @@ function App() {
                     <td>{save?.preparing_time}</td>
                     <td>{save.calories}</td>
                     <td>
-                      <button onClick={()=>handleCurrentAddToCart(save)} className="bg-green-500 text-base font-medium text-[#150B2B] px-4 py-2 rounded-2xl">
+                      <button onClick={()=>handleCurrentAddToCart(save.recipe_id, save)} className="bg-green-500 text-base font-medium text-[#150B2B] px-4 py-2 rounded-2xl">
                         Preparing
                       </button>
                     </td>
