@@ -66,7 +66,7 @@ function App() {
           ))}
         </div>
         {/* history section */}
-        <div className="bg-[#FFF] md:w-2/5 text-center border-[#28282833] border-2 md:p-8 rounded-lg mt-3">
+        <div className="bg-[#FFF] md:w-2/5 text-center border-[#28282833] border-2 p-8 rounded-lg">
           <div className="md:w-3/5 mx-auto">
             <h2 className="text-xl font-semibold border-b-2 pb-4">
               Want to cook:{saveCart.length}
