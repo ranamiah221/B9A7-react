@@ -1,11 +1,11 @@
 import { FaClock, FaVaadin } from "react-icons/fa";
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart, handleAddToCart}) => {
     const {recipe_image, recipe_name, short_description, ingredients,preparing_time,calories}=cart;
-    
+
     return (
-        <div className="card bg-base-100 w-full shadow-xl p-7 rounded-lg">
+        <div className="card bg-base-100 w-full shadow-xl p-7 rounded-lg border-[#28282833] border-2">
         <figure>
           <img className="h-80 w-full rounded-lg"
             src={recipe_image}
@@ -33,7 +33,8 @@ const Cart = ({cart}) => {
               <p className="text-[#282828CC] font-medium text-base">{calories}</p>
             </div>
          </div>
-         <button></button><button className="btn btn-accent text-xl font-medium bg-[#0BE58A] rounded-3xl py-5 px-6 mr-3">Want to cook</button></div>
+         {/* button */}
+        <button onClick={()=>handleAddToCart(cart)} className="btn btn-accent text-xl font-medium bg-[#0BE58A] rounded-3xl py-5 px-6 mr-3">Want to cook</button></div>
       </div>
     );
 };
