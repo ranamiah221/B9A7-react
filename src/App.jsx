@@ -10,6 +10,9 @@ function App() {
   const [carts, setCarts] = useState([]);
   const [saveCart, setSaveCart] = useState([]);
   const [prepares, setPrepares]=useState([]);
+  const [totalTime, setTotalTime]=useState(0);
+  const [totalCalories, setTotalCalories]=useState(0)
+
    useEffect(() => {
     fetch("recipe.json")
       .then((res) => res.json())
@@ -25,10 +28,20 @@ function App() {
     }
   };
   const handleCurrentAddToCart=(id,prepare)=>{
+    // add to current cart
     const newPrepare=([...prepares,prepare])
     setPrepares(newPrepare);
+    // remove to saving cart
     const remainingSaveCart=saveCart.filter(item=> item.recipe_id !== id)
     setSaveCart(remainingSaveCart);
+    // sum total time...
+    const newTime=parseInt(prepare.preparing_time.split(' ')[0]);
+    setTotalTime(totalTime + newTime);
+    console.log(prepare);
+    // sum total calories ...
+    const newCalories=parseInt(prepare.calories.split(' ')[0]);
+    setTotalCalories(totalCalories + newCalories);
+
 
   }
 
@@ -119,6 +132,15 @@ function App() {
                   </tr>
                 </tbody>
               ))}
+                  <tbody>
+                  <tr className="text-xl font-normal">
+                    <td></td>
+                    <td></td>
+                    <td className="text-xl text-black font-medium pt-10">Total Time= {totalTime} <span className="text-base font-medium">min</span> </td>
+                    <td className="text-xl text-black font-medium pt-10">Total Calories= {totalCalories} <span className="text-base font-medium">calories</span></td>
+                
+                  </tr>
+                </tbody>
             </table>
           </div>
           
